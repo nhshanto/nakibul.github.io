@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nakibul Haque Shanto — Finance & Research</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --card: #171a21;
+    --text: #e6e8ee;
+    --muted: #9aa3b2;
+    --accent: #4ade80;
+    --border: #262b35;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+
+  header { padding: 90px 0 60px; }
+  .tag {
+    display: inline-block;
+    font-size: 13px;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--border);
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+  }
+  h1 { font-size: clamp(32px, 6vw, 48px); line-height: 1.15; letter-spacing: -1px; }
+  h1 span { color: var(--accent); }
+  .sub { color: var(--muted); font-size: 18px; margin-top: 18px; max-width: 560px; }
+
+  section { padding: 50px 0; border-top: 1px solid var(--border); }
+  h2 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    margin-bottom: 22px;
+  }
+  p { margin-bottom: 16px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+  .card h3 { font-size: 18px; margin-bottom: 6px; }
+  .card .meta { font-size: 14px; color: var(--accent); margin-bottom: 10px; }
+  .card p { color: var(--muted); font-size: 15px; margin-bottom: 0; }
+
+  ul.tags { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+  ul.tags li {
+    font-size: 14px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    border-radius: 999px;
+    color: var(--muted);
+  }
+
+  .links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+  .links a {
+    color: var(--text);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: border-color .2s, color .2s;
+  }
+  .links a:hover { border-color: var(--accent); color: var(--accent); }
+
+  footer {
+    padding: 40px 0;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <span class="tag">Finance · Research · Technology</span>
+    <h1>Nakibul Haque <span>Shanto</span></h1>
+    <p class="sub">Finance graduate from Bangladesh exploring how machine learning can solve real problems in green finance and sustainable economics.</p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I'm a finance graduate (BBA, major in Finance) from Bangladesh with a strong interest in how emerging technology is reshaping economics and finance. My current focus is research on applying machine learning to the challenges of green finance.</p>
+    <p>Outside of work, I'm curious about technology and history, and I enjoy photography as a way to slow down and observe the world.</p>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+    <div class="card">
+      <h3>Machine Learning to Overcome the Challenges of Green Finance</h3>
+      <div class="meta">Manuscript in preparation for publication</div>
+      <p>Green finance faces persistent challenges — from data quality and risk assessment to measuring genuine environmental impact. My research explores how machine learning methods can address these gaps and support more reliable, scalable green finance decisions.</p>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="card">
+      <h3>BBA, Major in Finance</h3>
+      <div class="meta">University Name · Year</div>
+      <p>Replace with your university, graduation year, and any honours or relevant coursework.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills & Interests</h2>
+    <ul class="tags">
+      <li>Green Finance</li>
+      <li>Financial Analysis</li>
+      <li>Machine Learning</li>
+      <li>Python</li>
+      <li>Excel</li>
+      <li>Technology</li>
+      <li>History</li>
+      <li>Photography</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>CV & Contact</h2>
+    <div class="links">
+      <a href="cv.pdf" target="_blank">Download CV</a>
+      <a href="mailto:your@email.com">Email</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+      <a href="https://scholar.google.com/" target="_blank">Google Scholar</a>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Nakibul Haque Shanto
+  </footer>
+
+</div>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
