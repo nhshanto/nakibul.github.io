@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nakibul Haque Shanto | Finance & Research</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  /* --- VARIABLES --- */
+  :root {
+    --bg: #0a0a0f;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
+    --accent: #10b981; /* Emerald green */
+    --accent-glow: rgba(16, 185, 129, 0.15);
+    --nav-bg: rgba(10, 10, 15, 0.8);
+  }
+
+  /* --- BASE STYLES --- */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+    /* Subtle background glow */
+    background-image: radial-gradient(circle at 50% 0%, var(--accent-glow) 0%, transparent 50%);
+    background-repeat: no-repeat;
+    background-size: 100% 800px;
+  }
+
+  /* --- NAVIGATION --- */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: var(--nav-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--card-border);
+    z-index: 1000;
+  }
+  .nav-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-logo { font-weight: 700; font-size: 18px; letter-spacing: -0.5px; }
+  .nav-links { display: flex; gap: 20px; }
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* --- LAYOUT --- */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  section {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--card-border);
+  }
+  section:last-of-type { border-bottom: none; }
+
+  /* --- HERO SECTION --- */
+  .hero {
+    padding-top: 180px;
+    padding-bottom: 100px;
+    border-bottom: 1px solid var(--card-border);
+  }
+  .tag {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 24px;
+  }
+  h1 {
+    font-size: clamp(40px, 6vw, 64px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 24px;
+  }
+  h1 span { color: var(--accent); }
+  .subtitle {
+    font-size: 18px;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-bottom: 32px;
+  }
+
+  /* --- TYPOGRAPHY --- */
+  h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  h2::after {
+    content: "";
+    height: 1px;
+    flex-grow: 1;
+    background: var(--card-border);
+  }
+  h3 { font-size: 20px; margin-bottom: 8px; color: var(--text); font-weight: 600; }
+  p { color: var(--text-muted); margin-bottom: 16px; font-size: 16px; }
+
+  /* --- CARDS --- */
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 24px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(16, 185, 129, 0.3);
+  }
+  .research-card { border-left: 4px solid var(--accent); }
+  .research-card .meta { color: var(--accent); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+
+  /* --- SKILLS --- */
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style: none;
+  }
+  .skills-list li {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--text-muted);
+    transition: all 0.2s;
+  }
+  .skills-list li:hover {
+    color: var(--text);
+    border-color: var(--accent);
+    background: rgba(16, 185, 129, 0.1);
+  }
+
+  /* --- BUTTONS / LINKS --- */
+  .btn-group { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 24px; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #000;
+    border: 1px solid var(--accent);
+  }
+  .btn-primary:hover {
+    background: #34d399; /* lighter green */
+    box-shadow: 0 0 20px var(--accent-glow);
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--card-border);
+  }
+  .btn-outline:hover {
+    border-color: var(--text);
+    background: var(--card-bg);
+  }
+
+  /* --- PHOTOGRAPHY GRID --- */
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+  }
+  .photo-placeholder {
+    background: var(--card-bg);
+    border: 1px dashed var(--card-border);
+    border-radius: 12px;
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 14px;
+  }
+
+  /* --- FOOTER --- */
+  footer {
+    padding: 40px 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 14px;
+  }
+
+  /* --- ANIMATIONS --- */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* --- MOBILE RESPONSIVENESS --- */
+  @media (max-width: 768px) {
+    .nav-links { display: none; } /* Hide nav links on small phones */
+    .hero { padding-top: 140px; }
+    .card { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-content">
+      <div class="nav-logo">NH Shanto</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#education">Education</a>
+        <a href="#photography">Photography</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="hero container fade-in">
+    <span class="tag">Finance · Research · Technology</span>
+    <h1>Nakibul Haque <span>Shanto</span></h1>
+    <p class="subtitle">Finance graduate from Bangladesh exploring how machine learning can solve real problems in green finance and sustainable economics.</p>
+    <div class="btn-group">
+      <a href="#research" class="btn btn-primary">View My Research</a>
+      <a href="cv.pdf" target="_blank" class="btn btn-outline">Download CV</a>
+    </div>
+  </header>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="container fade-in">
+    <h2>About Me</h2>
+    <p>I'm a finance graduate (BBA, major in Finance) from Bangladesh with a strong interest in how emerging technology is reshaping economics and finance. My current focus is research on applying machine learning to the challenges of green finance.</p>
+    <p>Outside of work, I'm curious about technology and history, and I enjoy photography as a way to slow down and observe the world.</p>
+  </section>
+
+  <!-- RESEARCH SECTION -->
+  <section id="research" class="container fade-in">
+    <h2>Research</h2>
+    <div class="card research-card">
+      <div class="meta">Manuscript in Preparation</div>
+      <h3>Machine Learning to Overcome the Challenges of Green Finance</h3>
+      <p style="margin-top: 12px;">Green finance faces persistent challenges — from data quality and risk assessment to measuring genuine environmental impact. My research explores how machine learning methods can address these gaps and support more reliable, scalable green finance decisions.</p>
+    </div>
+  </section>
+
+  <!-- EDUCATION SECTION -->
+  <section id="education" class="container fade-in">
+    <h2>Education</h2>
+    <div class="card">
+      <h3>BBA, Major in Finance</h3>
+      <p style="color: var(--accent); font-weight: 600; margin-bottom: 8px;">University Name · Graduation Year</p>
+      <p>Relevant Coursework: Corporate Finance, Investment Analysis, Financial Modeling, Data Analytics.</p>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="container fade-in">
+    <h2>Skills & Interests</h2>
+    <ul class="skills-list">
+      <li>Green Finance</li>
+      <li>Financial Analysis</li>
+      <li>Machine Learning</li>
+      <li>Python</li>
+      <li>Data Visualization</li>
+      <li>Excel & Financial Modeling</li>
+      <li>Technology Trends</li>
+      <li>History</li>
+      <li>Photography</li>
+    </ul>
+  </section>
+
+  <!-- PHOTOGRAPHY SECTION -->
+  <section id="photography" class="container fade-in">
+    <h2>Photography</h2>
+    <p style="margin-bottom: 24px;">A few frames from my everyday — places, light, and moments I found worth keeping.</p>
+    <div class="photo-grid">
+      <!-- Replace these placeholders with <img> tags once you upload photos -->
+      <div class="photo-placeholder">Photo 1 (Place & Year)</div>
+      <div class="photo-placeholder">Photo 2 (Place & Year)</div>
+      <div class="photo-placeholder">Photo 3 (Place & Year)</div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="container fade-in">
+    <h2>Get in Touch</h2>
+    <p>I am currently open to research collaborations, opportunities in finance, and discussions about technology.</p>
+    <div class="btn-group">
+      <a href="mailto:your@email.com" class="btn btn-primary">Email Me</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank" class="btn btn-outline">LinkedIn</a>
+      <a href="https://scholar.google.com/" target="_blank" class="btn btn-outline">Google Scholar</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; <span id="year"></span> Nakibul Haque Shanto. All rights reserved.</p>
+  </footer>
+
+  <!-- ANIMATION SCRIPT -->
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Scroll reveal animation
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach((element) => {
+      observer.observe(element);
+    });
+  </script>
+</body>
+</html>
